@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f766e">
+<title>CareVerse | Smart Healthcare</title>
+<style>
+:root{--bg:#f4f8fb;--card:#fff;--ink:#172b4d;--muted:#68788d;--brand:#0f766e;--brand2:#14b8a6;--line:#e4edf2;--danger:#dc2626;--amber:#b45309;--shadow:0 8px 28px #183b5210}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:#102f3b;color:white;padding:24px 16px;display:flex;flex-direction:column;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;padding:0 10px}.logo{display:grid;place-items:center;background:#14b8a6;color:#083344;border-radius:12px;width:39px;height:39px;font-size:22px}.side-label{color:#91b5be;font-size:11px;letter-spacing:1.5px;padding:0 12px;margin-bottom:-10px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#c5d9de;text-align:left;padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#1d4b57;color:white}.side-foot{margin-top:auto;color:#a8c5cc;font-size:12px;line-height:1.5;padding:10px}.main{min-width:0}.topbar{background:#fff;border-bottom:1px solid var(--line);padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:14px}.topbar small{color:var(--muted)}.avatar{width:38px;height:38px;display:grid;place-items:center;background:#ccfbf1;color:#115e59;border-radius:50%;font-weight:800}.user{display:flex;gap:10px;align-items:center}.content{padding:28px;max-width:1500px;margin:auto}.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}.page-head h1{margin:0 0 6px;font-size:clamp(24px,3vw,32px);letter-spacing:-.7px}.muted{color:var(--muted)}.eyebrow{color:var(--brand);font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}.btn{border:0;background:var(--brand);color:#fff;padding:11px 15px;border-radius:10px;font-weight:700}.btn:hover{background:#115e59}.btn.secondary{background:#e6f5f3;color:#115e59}.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#fee2e2;color:#991b1b}.grid{display:grid;gap:18px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:20px}.two{grid-template-columns:1.15fr .85fr}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:var(--shadow);min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.stat-icon{width:38px;height:38px;border-radius:12px;background:#e6f5f3;display:grid;place-items:center;font-size:19px}.stat-num{font-size:30px;font-weight:800;margin:14px 0 3px;letter-spacing:-1px}.stat-note{font-size:12px;color:var(--muted)}h2{font-size:18px;margin:0 0 5px}h3{font-size:15px;margin:0 0 8px}.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px}.link{border:0;background:none;color:var(--brand);font-weight:700}.item{padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;align-items:center}.item:first-of-type{border-top:0}.item p{margin:4px 0 0;font-size:13px;color:var(--muted)}.pill{font-size:11px;padding:5px 9px;border-radius:999px;background:#dcfce7;color:#166534;font-weight:800;white-space:nowrap}.pill.wait{background:#fef3c7;color:#92400e}.pill.cancel{background:#fee2e2;color:#991b1b}.pill.info{background:#dbeafe;color:#1d4ed8}.banner{background:linear-gradient(120deg,#0f766e,#0f4c5c);color:white;border-radius:18px;padding:25px;display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}.banner h2{font-size:22px;margin:7px 0}.banner p{color:#d1f5ef;margin:0;max-width:610px;line-height:1.5}.banner .btn{background:white;color:#115e59;white-space:nowrap}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:13px;font-weight:700;color:#334155}.field input,.field select,.field textarea{width:100%;border:1px solid #d6e2e9;background:#fff;border-radius:10px;padding:11px 12px;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand2);box-shadow:0 0 0 3px #14b8a620}.field textarea{min-height:100px;resize:vertical}.field.full{grid-column:1/-1}.notice{padding:13px 15px;border-radius:12px;background:#eff6ff;color:#1e40af;font-size:13px;line-height:1.5;margin-bottom:16px}.notice.warn{background:#fff7ed;color:#9a3412}.notice.red{background:#fef2f2;color:#991b1b}.result{background:#f0fdfa;border:1px solid #99f6e4;border-radius:14px;padding:17px;margin-top:16px}.result strong{color:#115e59}.hidden{display:none!important}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px}.empty{text-align:center;padding:26px;color:var(--muted);font-size:13px}.bar-row{display:grid;grid-template-columns:90px 1fr 35px;gap:10px;align-items:center;margin:14px 0;font-size:12px;color:var(--muted)}.bar{height:9px;background:#e7f0f3;border-radius:99px;overflow:hidden}.bar span{height:100%;display:block;background:linear-gradient(90deg,#0f766e,#2dd4bf);border-radius:99px}.doctor{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}.doctor:first-of-type{border:0}.doc-avatar{width:43px;height:43px;border-radius:13px;background:#e0f2fe;display:grid;place-items:center;font-size:21px}.doctor p{margin:3px 0;color:var(--muted);font-size:12px}.doctor .spacer{flex:1}.small{font-size:12px}.footer-note{font-size:11px;color:var(--muted);line-height:1.5;margin-top:22px}.mobile-menu{display:none}.toast{position:fixed;right:22px;bottom:22px;background:#123b45;color:#fff;padding:13px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:10;max-width:calc(100vw - 44px)}.split{display:flex;gap:10px;flex-wrap:wrap}.tag{display:inline-block;padding:6px 9px;background:#f1f5f9;border-radius:8px;font-size:12px;margin:3px}.emergency-number{font-size:28px;font-weight:900;color:#b91c1c}
+.status-badge{font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;display:inline-block;margin-top:4px}
+.status-badge.online{background:#dcfce7;color:#166534}
+.status-badge.offline{background:#fee2e2;color:#991b1b}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.layout{grid-template-columns:1fr}.sidebar{display:none;position:fixed;z-index:5;inset:0 auto 0 0;width:250px}.sidebar.open{display:flex}.mobile-menu{display:inline-flex}.topbar{padding:14px 17px}.content{padding:20px 15px}.stats,.three{grid-template-columns:1fr 1fr}.banner{align-items:flex-start;flex-direction:column}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.page-head{align-items:flex-start}.page-head .btn{font-size:12px;padding:10px}.card{padding:16px}}
+@media(max-width:420px){.stats,.three{grid-template-columns:1fr}.stat-num{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo">✚</div><span>CareVerse</span></div>
+  <div class="side-label">WORKSPACE</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard">◫ <span>Overview</span></button>
+    <button data-page="symptoms">♡ <span>Symptom Guide (AI)</span></button>
+    <button data-page="appointments">▦ <span>Appointments</span></button>
+    <button data-page="emergency">＋ <span>Emergency Routing</span></button>
+    <button data-page="wallet">▤ <span>Health Wallet</span></button>
+    <button data-page="reminders">◷ <span>Medicine Reminders</span></button>
+    <button data-page="admin">▥ <span>Admin Analytics</span></button>
+  </nav>
+  <div class="side-foot">Student demonstration prototype<br>AKTU B.Tech Final Year · 2026-27</div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div style="display:flex;align-items:center;gap:12px"><button class="btn ghost mobile-menu" id="menuBtn" aria-label="Open menu">☰</button><div><strong id="topTitle">Overview</strong><br><small>Smart healthcare, connected</small></div></div>
+    <div class="user"><div><strong id="userName">Demo Patient</strong><br><small>Patient workspace</small></div><div class="avatar" id="avatar">DP</div></div>
+  </header>
+  <section class="content" id="app"></section>
+</main>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const storeKey = 'careverse_mvp_v1';
+const seed = {
+  profile:{name:'Demo Patient',age:22},
+  aiEndpoint: 'http://localhost:8000',
+  appointments:[
+    {id:101,name:'Demo Patient',doctor:'Dr. Meera Sharma',specialty:'General Physician',date:todayPlus(1),time:'10:30',reason:'Routine consultation',token:1,status:'Confirmed'},
+    {id:102,name:'Demo Patient',doctor:'Dr. Arjun Verma',specialty:'Dermatologist',date:todayPlus(3),time:'12:00',reason:'Skin consultation',token:2,status:'Confirmed'}
+  ],
+  doctors:[
+    {name:'Dr. Meera Sharma',specialty:'General Physician',fee:400,available:'10:00 AM – 1:00 PM',rating:4.8},
+    {name:'Dr. Arjun Verma',specialty:'Dermatologist',fee:600,available:'11:00 AM – 2:00 PM',rating:4.7},
+    {name:'Dr. Riya Singh',specialty:'Cardiologist',fee:800,available:'2:00 PM – 5:00 PM',rating:4.9},
+    {name:'Dr. Kabir Khan',specialty:'Neurologist',fee:900,available:'3:00 PM – 6:00 PM',rating:4.6},
+    {name:'Dr. Ananya Rao',specialty:'ENT Specialist',fee:500,available:'9:00 AM – 12:00 PM',rating:4.7},
+    {name:'Dr. Sameer Joshi',specialty:'Gastroenterologist',fee:750,available:'1:00 PM – 4:00 PM',rating:4.8},
+    {name:'Dr. Alok Nath',specialty:'Orthopedic',fee:700,available:'11:00 AM – 3:00 PM',rating:4.7}
+  ],
+  records:[],
+  reminders:[]
+};
+function todayPlus(n){const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+function load(){try{const x=JSON.parse(localStorage.getItem(storeKey));return x?{...seed,...x,profile:{...seed.profile,...x.profile}}:structuredClone(seed)}catch(e){return structuredClone(seed)}}
+let state=load(), currentPage='dashboard';
+function save(){localStorage.setItem(storeKey,JSON.stringify(state));updateUser()}
+function updateUser(){const n=state.profile.name||'Demo Patient';$('#userName').textContent=n;$('#avatar').textContent=n.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c]))}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2600)}
+function pageHead(title,sub,button=''){return `<div class="page-head"><div><div class="eyebrow">CareVerse workspace</div><h1>${title}</h1><div class="muted">${sub}</div></div>${button}</div>`}
+function stat(label,num,note,icon){return `<div class="card"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon}</span></div><div class="stat-num">${num}</div><div class="stat-note">${note}</div></div>`}
+function statusPill(s){let c=s==='Cancelled'?'cancel':s==='Waiting'?'wait':'info';return `<span class="pill ${c}">${esc(s)}</span>`}
+function empty(msg){return `<div class="empty">${msg}</div>`}
+function activeAppts(){return state.appointments.filter(a=>a.status!=='Cancelled')}
+
+function renderDashboard(){const a=activeAppts();const next=a.filter(x=>x.date>=todayPlus(0)).sort((x,y)=>(x.date+x.time).localeCompare(y.date+y.time))[0];return `
+${pageHead('Good day, '+esc((state.profile.name||'Patient').split(' ')[0])+' 👋','Your health services at a glance.',`<button class="btn" data-go="appointments">＋ Book appointment</button>`)}
+<div class="banner"><div><div class="eyebrow" style="color:#99f6e4">YOUR HEALTH, IN ONE PLACE</div><h2>Care that feels connected.</h2><p>Explore specialist guidance with AI classification, manage appointments and track your clinical health records in one browser workspace.</p></div><button class="btn" data-go="symptoms">Explore AI symptom guide →</button></div>
+<div class="grid stats">${stat('Active appointments',a.length,'Confirmed demo bookings','▦')}${stat('Health records',state.records.length,'Saved in this browser','▤')}${stat('Medicine reminders',state.reminders.length,'Reminder entries','◷')}${stat('Listed specialists',state.doctors.length,'Sample doctor directory','♡')}</div>
+<div class="grid two">
+<div class="card"><div class="card-head"><div><h2>Upcoming appointment</h2><div class="muted small">Your next scheduled visit</div></div><button class="link" data-go="appointments">View all →</button></div>
+${next?`<div class="item"><div><strong>${esc(next.doctor)}</strong><p>${esc(next.specialty)} · ${esc(next.date)} at ${esc(next.time)}</p><p>Token #${next.token} · ${esc(next.reason)}</p></div>${statusPill(next.status)}</div>`:empty('No upcoming appointments. Book one to get started.')}
+</div>
+<div class="card"><div class="card-head"><div><h2>Quick actions</h2><div class="muted small">Common tasks</div></div></div><div class="grid" style="grid-template-columns:1fr 1fr;gap:10px"><button class="btn secondary" data-go="symptoms">♡ AI Symptom Guide</button><button class="btn secondary" data-go="wallet">▤ Add record</button><button class="btn secondary" data-go="reminders">◷ Add reminder</button><button class="btn secondary" data-go="emergency">＋ Emergency</button></div><div class="notice warn" style="margin:16px 0 0">This student demo does not access real hospital systems or verify live bed availability.</div></div>
+</div>
+<div class="card" style="margin-top:18px"><div class="card-head"><div><h2>Specialist directory</h2><div class="muted small">Sample listings for demonstration only</div></div><button class="link" data-go="appointments">Book a visit →</button></div><div class="grid three">${state.doctors.slice(0,3).map(d=>`<div style="border:1px solid var(--line);border-radius:13px;padding:14px"><div class="doctor" style="border:0;padding:0"><div class="doc-avatar">⚕</div><div><strong>${esc(d.name)}</strong><p>${esc(d.specialty)}</p></div></div><div class="item"><span class="muted small">Consultation fee</span><strong>₹${d.fee}</strong></div><div class="small muted">★ ${d.rating} demo rating</div></div>`).join('')}</div></div>
+<div class="footer-note">Demo information is stored in this browser's localStorage. Do not enter real patient or sensitive medical information.</div>`}
+
+function renderSymptoms(){return `${pageHead('AI Symptom Guide & Triage','Describe symptoms in natural language. Powered by Unit IV Machine Learning Pipeline.','')}
+<div class="notice red"><strong>Medical safety:</strong> This is an academic decision-support prototype. It cannot provide a clinical diagnosis. If symptoms are severe or sudden, call 112 immediately.</div>
+<div class="grid two"><div class="card"><h2>Describe what you are experiencing</h2><p class="muted small">Sends natural language symptoms to the trained Scikit-Learn TF-IDF + Logistic Regression model.</p>
+<form id="symptomForm"><div class="field"><label for="symptoms">Symptom description</label><textarea id="symptoms" required placeholder="Example: Severe chest tightness radiating to my left arm and dizziness"></textarea></div>
+<div class="field"><label for="apiEndpointInput">AI Microservice URL (GitHub Codespace or Localhost)</label><input id="apiEndpointInput" value="${esc(state.aiEndpoint || 'http://localhost:8000')}" placeholder="e.g. https://...app.github.dev or http://localhost:8000"></div>
+<div class="form-grid"><div class="field"><label for="duration">Duration</label><select id="duration"><option>Started today</option><option>1–3 days</option><option>4–7 days</option><option>More than a week</option></select></div><div class="field"><label for="severity">Self-rated severity</label><select id="severity"><option value="mild">Mild</option><option value="moderate">Moderate</option><option value="severe">Severe</option></select></div></div><button class="btn" id="symptomSubmitBtn" type="submit">Analyze with AI Model</button></form><div id="symptomResult"></div></div>
+<div class="card"><h2>Emergency warning signs</h2><p class="muted">Red-flag symptoms bypass routine queueing:</p><div class="item"><div><strong>Chest pressure or breathlessness</strong><p>Possible cardiac incident.</p></div><span class="pill cancel">Urgent</span></div><div class="item"><div><strong>Sudden numbness or facial drooping</strong><p>Possible neurological or stroke sign.</p></div><span class="pill cancel">Urgent</span></div><div class="item"><div><strong>High fever with persistent shivering</strong><p>Severe infection risk.</p></div><span class="pill cancel">Urgent</span></div>
+<div class="notice" style="margin-top:16px"><strong>AI Architecture (Unit IV):</strong><br>Dataset: Labelled Symptom Corpus<br>Feature Extraction: Sub-linear TF-IDF (1-2 ngrams)<br>Inference: Stratified Classifier + Probability Calibration</div></div></div>`}
+
+function renderAppointments(){const ap=state.appointments.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return `${pageHead('Appointments','Book a demo consultation and manage your token queue.')}
+<div class="grid two"><div class="card"><h2>Book an appointment</h2><p class="muted small">Bookings are stored in this browser only; no hospital receives them.</p><form id="bookingForm"><div class="field"><label for="patientName">Patient name</label><input id="patientName" required maxlength="80" value="${esc(state.profile.name)}"></div><div class="form-grid"><div class="field"><label for="specialty">Specialty</label><select id="specialty">${[...new Set(state.doctors.map(d=>d.specialty))].map(s=>`<option>${esc(s)}</option>`).join('')}</select></div><div class="field"><label for="bookingDate">Date</label><input id="bookingDate" type="date" min="${todayPlus(0)}" required value="${todayPlus(1)}"></div></div><div class="form-grid"><div class="field"><label for="bookingTime">Time</label><select id="bookingTime"><option>09:30</option><option>10:30</option><option>11:30</option><option>12:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select></div><div class="field"><label for="reason">Reason (optional)</label><input id="reason" maxlength="120" placeholder="Routine consultation"></div></div><button class="btn" type="submit">Confirm demo booking</button></form></div>
+<div class="card"><h2>How the demo queue works</h2><p class="muted">A local token number is assigned to each booking. It is not a real hospital queue and does not update in real time.</p><div class="item"><div><strong>1. Choose a specialty</strong><p>Pick from the sample directory.</p></div><span class="pill info">Step 1</span></div><div class="item"><div><strong>2. Get your token</strong><p>Token number is assigned in this browser.</p></div><span class="pill info">Step 2</span></div><div class="item"><div><strong>3. Manage status</strong><p>Cancel a demo booking whenever needed.</p></div><span class="pill info">Step 3</span></div></div></div>
+<div class="card" style="margin-top:18px"><div class="card-head"><div><h2>Appointment history</h2><div class="muted small">${ap.length} total bookings</div></div></div><div class="table-wrap"><table><thead><tr><th>Token</th><th>Patient</th><th>Specialist</th><th>Date & time</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead><tbody>${ap.length?ap.map(a=>`<tr><td>#${a.token}</td><td>${esc(a.name)}</td><td>${esc(a.doctor)}<br><span class="muted">${esc(a.specialty)}</span></td><td>${esc(a.date)}<br>${esc(a.time)}</td><td>${esc(a.reason||'—')}</td><td>${statusPill(a.status)}</td><td>${a.status!=='Cancelled'?`<button class="btn ghost" data-cancel="${a.id}">Cancel</button>`:'—'}</td></tr>`).join(''):`<tr><td colspan="7">${empty('No bookings yet.')}</td></tr>`}</tbody></table></div></div>`}
+
+function renderEmergency(){return `${pageHead('Emergency smart routing','A demonstration of location permission and map-based hospital search.')}
+<div class="notice red"><strong>Real emergency?</strong> Call India's emergency number <strong>112</strong> or your local emergency service. Do not wait for this demo to load. It does not know real-time hospital capacity.</div>
+<div class="grid two"><div class="card"><h2>Find nearby hospitals</h2><p class="muted small">Allow location access if you wish to center a map search near your device. Your coordinates are not saved by this demo.</p><button class="btn" id="locateBtn">◎ Use my current location</button> <button class="btn ghost" id="manualMapBtn">Search hospitals on map</button><div id="locationResult" class="result hidden"></div><div class="field" style="margin-top:18px"><label for="citySearch">Or enter an area / city</label><input id="citySearch" placeholder="e.g. Ghaziabad, Uttar Pradesh"></div><button class="btn secondary" id="cityMapBtn">Open map search</button></div>
+<div class="card"><div class="emergency-number">112</div><h2 style="margin-top:8px">Emergency assistance in India</h2><p class="muted">For life-threatening symptoms or injuries, contact emergency services directly.</p><a class="btn danger" style="display:inline-block;text-decoration:none" href="tel:112">Call 112</a><div class="notice warn" style="margin-top:18px">Hospital names, bed availability, ICU capacity, ambulance dispatch and ETA are not verified or connected in this student prototype.</div></div></div>
+<div class="card" style="margin-top:18px"><h2>Routing workflow (prototype)</h2><div class="grid three" style="margin-top:16px"><div><span class="stat-icon">◎</span><h3 style="margin-top:10px">1. Location</h3><p class="muted small">Browser geolocation requires permission and HTTPS.</p></div><div><span class="stat-icon">⌖</span><h3 style="margin-top:10px">2. Map search</h3><p class="muted small">Opens a map provider search in a new tab.</p></div><div><span class="stat-icon">＋</span><h3 style="margin-top:10px">3. Emergency service</h3><p class="muted small">Call emergency services directly for urgent help.</p></div></div></div>`}
+
+function renderWallet(){return `${pageHead('Digital health wallet','Store demo record labels and notes locally in this browser.')}
+<div class="notice warn">Privacy: this prototype is not an encrypted medical record system. Do not upload or enter real patient details, reports, prescriptions, or other sensitive health data. Records below are only local demo entries.</div>
+<div class="grid two"><div class="card"><h2>Add a demo record</h2><form id="recordForm"><div class="field"><label for="recordTitle">Record title</label><input id="recordTitle" required maxlength="100" placeholder="e.g. Sample blood test"></div><div class="form-grid"><div class="field"><label for="recordType">Record type</label><select id="recordType"><option>Lab report</option><option>Prescription</option><option>Imaging</option><option>Vaccination</option><option>Other</option></select></div><div class="field"><label for="recordDate">Date</label><input id="recordDate" type="date" value="${todayPlus(0)}" required></div></div><div class="field"><label for="recordNotes">Demo notes (optional)</label><textarea id="recordNotes" placeholder="Use sample text only" maxlength="500"></textarea></div><button class="btn" type="submit">Save demo record</button></form></div>
+<div class="card"><h2>Wallet overview</h2><div class="stat-num">${state.records.length}</div><div class="muted">Demo records in this browser</div><div class="item"><div><strong>Storage</strong><p>Browser localStorage</p></div><span class="pill info">Local only</span></div><div class="item"><div><strong>Cloud sync</strong><p>Not configured</p></div><span class="pill wait">Unavailable</span></div><div class="item"><div><strong>Encryption</strong><p>Not implemented in this MVP</p></div><span class="pill cancel">Not secure</span></div></div></div>
+<div class="card" style="margin-top:18px"><div class="card-head"><div><h2>Saved demo records</h2><div class="muted small">Entries stored on this device/browser</div></div><button class="btn ghost" id="exportRecords">Export JSON</button></div><div class="table-wrap"><table><thead><tr><th>Title</th><th>Type</th><th>Date</th><th>Notes</th><th>Action</th></tr></thead><tbody>${state.records.length?state.records.map(r=>`<tr><td>${esc(r.title)}</td><td>${esc(r.type)}</td><td>${esc(r.date)}</td><td>${esc(r.notes||'—')}</td><td><button class="btn ghost" data-delrecord="${r.id}">Delete</button></td></tr>`).join(''):`<tr><td colspan="5">${empty('No demo records saved.')}</td></tr>`}</tbody></table></div></div>`}
+
+function renderReminders(){return `${pageHead('Medicine reminders','Create reminder entries; this demo does not send push notifications or medical advice.')}
+<div class="notice warn">Enter sample medication details only. The app does not validate prescriptions, recommend dosages, or send notifications when the page is closed. Follow your clinician's instructions.</div>
+<div class="grid two"><div class="card"><h2>Add reminder</h2><form id="reminderForm"><div class="field"><label for="medName">Reminder label</label><input id="medName" required maxlength="100" placeholder="e.g. Sample morning medicine"></div><div class="form-grid"><div class="field"><label for="medTime">Time</label><input id="medTime" type="time" value="09:00" required></div><div class="field"><label for="medStart">Start date</label><input id="medStart" type="date" value="${todayPlus(0)}" required></div></div><div class="field"><label for="medNotes">Notes (optional)</label><input id="medNotes" maxlength="160" placeholder="e.g. Sample reminder only"></div><button class="btn" type="submit">Save reminder</button></form></div>
+<div class="card"><h2>Reminder limitations</h2><div class="item"><div><strong>Saved reminder list</strong><p>Stored in browser localStorage.</p></div><span class="pill info">Available</span></div><div class="item"><div><strong>Background alerts</strong><p>Not supported by this prototype.</p></div><span class="pill wait">Not active</span></div><div class="item"><div><strong>Missed-dose escalation</strong><p>No caregiver or SMS integration.</p></div><span class="pill wait">Not active</span></div></div></div>
+<div class="card" style="margin-top:18px"><h2>Your reminders</h2>${state.reminders.length?state.reminders.slice().sort((a,b)=>a.time.localeCompare(b.time)).map(r=>`<div class="item"><div><strong>◷ ${esc(r.time)} · ${esc(r.name)}</strong><p>${esc(r.date)} ${r.notes?'· '+esc(r.notes):''}</p></div><button class="btn ghost" data-delreminder="${r.id}">Delete</button></div>`).join(''):empty('No reminders added yet.')}</div>`}
+
+function renderAdmin(){const active=activeAppts();const bySpec={};active.forEach(a=>bySpec[a.specialty]=(bySpec[a.specialty]||0)+1);const max=Math.max(1,...Object.values(bySpec));return `${pageHead('Admin analytics','Simple analytics calculated from local demo bookings.')}
+<div class="notice">This dashboard uses sample doctor data and appointments saved in the current browser. It is not connected to hospital systems and is not a clinical forecasting model.</div>
+<div class="grid stats">${stat('All bookings',state.appointments.length,'Including cancelled','▦')}${stat('Active bookings',active.length,'Not cancelled','✓')}${stat('Cancelled',state.appointments.filter(a=>a.status==='Cancelled').length,'Local records only','×')}${stat('Demo records',state.records.length,'Health wallet entries','▤')}</div>
+<div class="grid two"><div class="card"><h2>Bookings by specialty</h2><p class="muted small">Counts from this browser's active bookings.</p>${Object.keys(bySpec).length?Object.entries(bySpec).map(([s,n])=>`<div class="bar-row"><span>${esc(s)}</span><div class="bar"><span style="width:${n/max*100}%"></span></div><strong>${n}</strong></div>`).join(''):empty('No active bookings to chart.')}</div>
+<div class="card"><h2>Sample doctor directory</h2><p class="muted small">Demo scores are illustrative, not verified clinical quality metrics.</p>${state.doctors.map(d=>`<div class="doctor"><div class="doc-avatar">⚕</div><div><strong>${esc(d.name)}</strong><p>${esc(d.specialty)} · ₹${d.fee}</p></div><div class="spacer"></div><span class="pill info">★ ${d.rating}</span></div>`).join('')}</div></div>
+<div class="card" style="margin-top:18px"><div class="card-head"><div><h2>Demo data controls</h2><div class="muted small">Export a copy or reset local data.</div></div></div><div class="split"><button class="btn secondary" id="exportAll">Export all data (JSON)</button><button class="btn danger" id="resetData">Reset demo data</button></div><p class="footer-note">Reset deletes this prototype's localStorage data for this browser only. It cannot remove copies exported elsewhere.</p></div>`}
+
+const renderers={dashboard:renderDashboard,symptoms:renderSymptoms,appointments:renderAppointments,emergency:renderEmergency,wallet:renderWallet,reminders:renderReminders,admin:renderAdmin};
+
+function go(p){if(!renderers[p])return;currentPage=p;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));$('#topTitle').textContent=({dashboard:'Overview',symptoms:'AI Symptom Guide',appointments:'Appointments',emergency:'Emergency Routing',wallet:'Health Wallet',reminders:'Medicine Reminders',admin:'Admin Analytics'})[p];$('#app').innerHTML=renderers[p]();$('#sidebar').classList.remove('open');window.scrollTo(0,0)}
+
+function downloadJSON(filename,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);toast('Export prepared. Keep exported files private.')}
+
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});
+
+$('#app').addEventListener('click',e=>{
+ const goBtn=e.target.closest('[data-go]');if(goBtn){go(goBtn.dataset.go);return}
+ const cancel=e.target.closest('[data-cancel]');if(cancel){const a=state.appointments.find(x=>x.id===Number(cancel.dataset.cancel));if(a){a.status='Cancelled';save();go(currentPage);toast('Demo booking cancelled.')}return}
+ const dr=e.target.closest('[data-delrecord]');if(dr){state.records=state.records.filter(x=>x.id!==Number(dr.dataset.delrecord));save();go('wallet');toast('Demo record deleted.');return}
+ const dm=e.target.closest('[data-delreminder]');if(dm){state.reminders=state.reminders.filter(x=>x.id!==Number(dm.dataset.delreminder));save();go('reminders');toast('Reminder deleted.');return}
+ if(e.target.id==='exportRecords')downloadJSON('careverse-demo-records.json',state.records);
+ if(e.target.id==='exportAll')downloadJSON('careverse-demo-data.json',state);
+ if(e.target.id==='resetData'&&confirm('Reset all CareVerse demo data in this browser?')){localStorage.removeItem(storeKey);state=structuredClone(seed);save();go('dashboard');toast('Demo data reset.')}
+ if(e.target.id==='locateBtn')locate();
+ if(e.target.id==='manualMapBtn')window.open('https://www.google.com/maps/search/hospitals+near+me','_blank','noopener');
+ if(e.target.id==='cityMapBtn'){const q=$('#citySearch').value.trim();if(!q){toast('Enter a city or area first.');return}window.open('https://www.google.com/maps/search/hospitals+near+'+encodeURIComponent(q),'_blank','noopener')}
+});
+
+function locate(){const out=$('#locationResult');if(!navigator.geolocation){toast('Geolocation is not supported by this browser.');return}toast('Requesting location permission…');navigator.geolocation.getCurrentPosition(pos=>{const lat=pos.coords.latitude,lon=pos.coords.longitude;out.classList.remove('hidden');out.innerHTML=`<strong>Location received for this session</strong><p class="small">Coordinates are used to open a map search and are not saved by CareVerse.</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/hospitals/@${lat},${lon},14z">Open nearby hospital map</a>`;},err=>toast(err.code===1?'Location permission denied. Use the manual area search instead.':'Could not get location. Use the manual area search instead.'),{enableHighAccuracy:true,timeout:10000,maximumAge:60000})}
+
+// --- SYMPTOM SUBMISSION & AI INTEGRATION LOGIC ---
+$('#app').addEventListener('submit', async e=>{
+ e.preventDefault();
+ if(e.target.id==='bookingForm'){const name=$('#patientName').value.trim(),specialty=$('#specialty').value,date=$('#bookingDate').value,time=$('#bookingTime').value,reason=$('#reason').value.trim()||'Routine consultation';if(date<todayPlus(0)){toast('Choose today or a future date.');return}const doctor=state.doctors.find(d=>d.specialty===specialty)||state.doctors[0];const token=state.appointments.reduce((m,a)=>Math.max(m,a.token||0),0)+1;state.profile.name=name;state.appointments.push({id:Date.now(),name,doctor:doctor.name,specialty,date,time,reason,token,status:'Confirmed'});save();go('appointments');toast('Demo appointment saved. Token #'+token);return}
+ if(e.target.id==='recordForm'){state.records.push({id:Date.now(),title:$('#recordTitle').value.trim(),type:$('#recordType').value,date:$('#recordDate').value,notes:$('#recordNotes').value.trim()});save();go('wallet');toast('Demo record saved locally.');return}
+ if(e.target.id==='reminderForm'){state.reminders.push({id:Date.now(),name:$('#medName').value.trim(),time:$('#medTime').value,date:$('#medStart').value,notes:$('#medNotes').value.trim()});save();go('reminders');toast('Reminder saved locally.');return}
+ 
+ if(e.target.id==='symptomForm'){
+    const text = $('#symptoms').value.trim();
+    const ep = $('#apiEndpointInput').value.trim().replace(/\/+$/, "");
+    state.aiEndpoint = ep;
+    save();
+
+    const submitBtn = $('#symptomSubmitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing with AI...';
+    $('#symptomResult').innerHTML = `<div class="result" style="text-align:center"><p class="muted">Connecting to CareVerse AI microservice...</p></div>`;
+
+    try {
+      // Step 1: Call FastAPI Backend
+      const res = await fetch(`${ep}/predict-specialist`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ symptoms: text })
+      });
+
+      if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+      const data = await res.json();
+
+      // Step 2: Render Model Predictions
+      const isUrgent = data.is_emergency_flag || $('#severity').value === 'severe';
+      const confPct = (data.confidence * 100).toFixed(1);
+      
+      let candidateChips = (data.ranked_candidates || []).map(c => 
+        `<span class="tag"><strong>${esc(c.specialty)}</strong> (${(c.confidence_score * 100).toFixed(1)}%)</span>`
+      ).join('');
+
+      $('#symptomResult').innerHTML = `
+        <div class="result">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="eyebrow">${isUrgent ? 'SAFETY ALERT' : 'AI MODEL PREDICTION (UNIT IV)'}</span>
+            <span class="status-badge online">AI Microservice Online</span>
+          </div>
+          <h3 style="margin-top:7px;color:#0f766e;font-size:20px">${esc(data.primary_recommendation)}</h3>
+          <p>Confidence: <strong>${confPct}%</strong> based on TF-IDF classification.</p>
+          <div style="margin:8px 0">${candidateChips}</div>
+          ${isUrgent ? '<div class="notice red" style="margin-top:10px">Emergency flag triggered! Seek urgent clinical attention or call 112 immediately.</div>' : '<p class="small muted">Duration selected: '+esc($('#duration').value)+'. Machine-learning triage support only.</p>'}
+          <button class="btn secondary" id="bookSuggested" data-specialty="${esc(data.primary_recommendation)}">Book with ${esc(data.primary_recommendation)}</button>
+        </div>`;
+      toast('AI recommendation loaded');
+    } catch (err) {
+      // Fallback: If AI Backend is not running, gracefully fallback to local rules
+      console.warn('AI Service unavailable, falling back to local rules:', err);
+      let specialty='General Physician', reason='Fallback rule: General symptoms require a doctor assessment.';
+      const low = text.toLowerCase();
+      if(/chest pain|difficulty breathing|shortness of breath|one side.*weak|sudden weakness|unconscious|severe bleeding/.test(low)){
+        specialty='Emergency care';reason='Possible emergency detected by client fallback.';
+      } else if(/rash|itch|acne|skin/.test(low)){
+        specialty='Dermatologist';reason='Skin terms detected.';
+      } else if(/heart|palpitation/.test(low)){
+        specialty='Cardiologist';reason='Cardiac terms detected.';
+      } else if(/joint|bone|back pain|knee/.test(low)){
+        specialty='Orthopedic';reason='Musculoskeletal terms detected.';
+      }
+      
+      const isUrgent = specialty==='Emergency care'||$('#severity').value==='severe';
+      $('#symptomResult').innerHTML = `
+        <div class="result">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="eyebrow">${isUrgent ? 'SAFETY ALERT' : 'CLIENT FALLBACK'}</span>
+            <span class="status-badge offline">AI Microservice Offline</span>
+          </div>
+          <h3 style="margin-top:7px">${esc(specialty)}</h3>
+          <p>${esc(reason)}</p>
+          <p class="small muted" style="color:#b45309">Note: Backend at ${esc(ep)} was unreachable. Check Codespace port 8000.</p>
+          ${isUrgent ? '<div class="notice red">Please seek urgent care immediately. Call 112.</div>' : ''}
+          <button class="btn secondary" id="bookSuggested" data-specialty="${esc(specialty)}">Book with this specialty</button>
+        </div>`;
+      toast('Backend offline: using fallback rules');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Analyze with AI Model';
+    }
+    return;
+ }
+});
+
+$('#app').addEventListener('click',e=>{
+  if(e.target.id==='bookSuggested'){
+    const s=e.target.dataset.specialty;
+    go('appointments');
+    setTimeout(() => {
+      const select = $('#specialty');
+      if(select && [...select.options].some(o=>o.value===s)) {
+        select.value = s;
+      } else {
+        toast(`Specialty '${s}' selected. Choose nearest available doctor.`);
+      }
+    }, 50);
+  }
+});
+
+$('#menuBtn').addEventListener('click',()=>$('#sidebar').classList.toggle('open'));
+updateUser();go('dashboard');
+})();
+</script>
+</body>
+</html>
